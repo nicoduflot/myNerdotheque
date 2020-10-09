@@ -141,9 +141,9 @@ function listMediaBack(){
             $tabResult = $tabResult . "<tr>";
             $tabResult = $tabResult . "<td>" . utf8_encode($row["titreMedia"]) . "</td>";
             $tabResult = $tabResult . "<td>";
-            $tabResult = $tabResult . "<button class='btn btn-primary editMediaButton' data-id='" . $row["idMedia"] . "' data-toggle=\"modal\" data-target=\"#editMedia\">";
-            $tabResult = $tabResult . "Editer media " . $row["idMedia"] . "</button> ";
-            $tabResult = $tabResult . "<a href=\"./modMedia.php?idMedia=" . $row["idMedia"] . "\">Editer</a>";
+            $tabResult = $tabResult . "<button class='btn btn-sm btn-outline-primary editMediaButton' data-id='" . $row["idMedia"] . "' data-toggle=\"modal\" data-target=\"#editMedia\">";
+            $tabResult = $tabResult . "Editer</button> ";
+            //$tabResult = $tabResult . "<a href=\"./modMedia.php?idMedia=" . $row["idMedia"] . "\">Editer</a>";
             $tabResult = $tabResult . "</td>";
             $tabResult = $tabResult . "<td>";
             $tabResult = $tabResult . "<a href=\"supEntite.php?entite=media&id=". $row["idMedia"] ."\">Supprimer</a>";

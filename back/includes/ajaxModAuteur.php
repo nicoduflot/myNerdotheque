@@ -6,38 +6,30 @@ include "../../functions/sql.php";
 
 $messageSQL = "";
 
-//if( isset($_POST["modMedia"]) && $_POST["modMedia"] === "mod" ){
-//    echo "mechanical";
-//    $messageSQL = modMedia(utf8_decode(addslashes($_POST["titre"])), utf8_decode(addslashes($_POST["resume"])), $_POST["idMedia"]);
-//    return $messageSQL;
-//}
-
-
-
-if( isset($_GET["idMedia"]) ){
+if( isset($_GET["idAuteur"]) ){
     $sql = "SELECT 
-                `id` AS `idMedia`, `titre`, `resume`, `utilisateur_id` 
+                `id` AS `idAuteur`, `nom`, `prenom`, `bio` 
             FROM 
-                `media` 
+                `auteur` 
             WHERE 
-                `id` = " . $_GET["idMedia"] . ";";
+                `id` = " . $_GET["idAuteur"] . ";";
     //echo $sql;
     $result = selectBDD($sql);
     $nbRows = (!$result)? 0 : mysqli_num_rows($result);
     if($nbRows > 0){
         $row = mysqli_fetch_assoc($result);
         //var_dump($row);
-        $jSonMedia = "
+        $jSonAuteur = "
             {
-                \"idMedia\": ".$row['idMedia'].",
-                \"titre\": \"".utf8_encode($row['titre'])."\",
-                \"resume\": \"".utf8_encode($row['resume'])."\",
-                \"utilisateur_id\": ".$row['utilisateur_id']."
+                \"idAuteur\": ".$row['idAuteur'].",
+                \"nom\": \"".utf8_encode($row['nom'])."\",
+                \"prenom\": \"".utf8_encode($row['prenom'])."\",
+                \"bio\": \"".utf8_encode($row['bio'])."\"
             }
         ";
-        echo $jSonMedia;
+        echo $jSonAuteur;
         //return $row;
-        return $jSonMedia;
+        return $jSonAuteur;
     }else{
         //echo "pas de data";
         //header("location: ./index.php");
@@ -45,9 +37,9 @@ if( isset($_GET["idMedia"]) ){
         return "No data";
     }
 }else{
-    $jSonMedia = file_get_contents("php://input");
-    if(strlen($jSonMedia) > 0){
-        $data = json_decode($jSonMedia, true);
+    $jsonData = file_get_contents("php://input");
+    if(strlen($jsonData) > 0){
+        $data = json_decode($jsonData, true);
         if (!(json_last_error() == JSON_ERROR_NONE and is_array($data))){
             die('Données JSON invalides.');
         }

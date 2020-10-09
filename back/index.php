@@ -65,18 +65,38 @@ if(!$_COOKIE["accesAdmin20200727"]){
         <div class="modal fade" id="editAuteur" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
+                    <form method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Édition</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body m-1">
+                            <div class="form-group row">
+                                <label for="nom" class="col-lg-4">Nom :</label>
+                                <input type="text" class="form-control col-lg-8" name="nom" id="nom" value=""
+                                       placeholder="Renseignez le nom de l'auteur" required />
+                            </div>
+                            <div class="form-group row">
+                                <label for="prenom" class="col-lg-4">Prénom :</label>
+                                <input type="text" class="form-control col-lg-8" name="prenom" id="prenom" value=""
+                                       placeholder="Renseignez le prénom de l'auteur" required />
+                            </div>
+                            <div class="form-group row">
+                                <label for="bio" class="col-lg-4">Biographie :</label>
+                                <textarea class="form-control" name="bio" id="bio" placeholder="Biographie de l'auteur"></textarea>
+                            </div>
+                            <input type="hidden" name="idAuteur" id="idAuteur" value="" />
+                        </div>
+                    </form>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Annuler
+                        </button>
+                        <button type="submit" id="submitModAuteur" data-dismiss="modal" class="btn btn-primary">
+                            Sauvegarder les modifications
+                        </button>
                     </div>
                 </div>
             </div>

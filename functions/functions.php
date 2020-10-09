@@ -266,7 +266,10 @@ function listAuteurBack(){
             $tabResult = $tabResult . "<tr>";
             $tabResult = $tabResult . "<td>" . utf8_encode($row["nomPrenom"]) . "</td>";
             $tabResult = $tabResult . "<td>" . $row["nbMedia"] . "</td>";
-            $tabResult = $tabResult . "<td><a href=\"modAuteur.php?idAuteur=" . $row["idAuteur"] . "\">Editer</a></td>";
+            $tabResult = $tabResult . "<td>";
+            $tabResult = $tabResult . "<button class='btn btn-sm btn-outline-primary editAuteurButton' data-id='" . $row["idAuteur"] . "' data-toggle=\"modal\" data-target=\"#editAuteur\">";
+            $tabResult = $tabResult . "Editer</button> ";
+            //$tabResult = $tabResult . "<a href=\"modAuteur.php?idAuteur=" . $row["idAuteur"] . "\">Editer</a></td>";
             $tabResult = $tabResult . "<td>";
             $tabResult = $tabResult . "<a href=\"supEntite.php?entite=auteur&id=". $row["idAuteur"] ."\">Supprimer</a>";
             $tabResult = $tabResult . "</td>";

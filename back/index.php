@@ -29,14 +29,14 @@ if(!$_COOKIE["accesAdmin20200727"]){
         <div class="modal fade" id="editMedia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="post">
+                    <form method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Édition</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body m-1">
                             <div class="form-group row">
                                 <label for="titre" class="col-lg-4">Titre :</label>
                                 <input type="text" class="form-control col-lg-8" name="titre" id="titre" value=""
@@ -48,13 +48,16 @@ if(!$_COOKIE["accesAdmin20200727"]){
                             </div>
                             <input type="hidden" name="idMedia" id="idMedia" value="" />
                             <input type="hidden" name="idUtilisateur" id="idUtilisateur" value="" />
-
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Annuler
+                            </button>
+                            <button type="submit" id="submitModMedia" data-dismiss="modal" class="btn btn-primary">
+                                Sauvegarder les modifications
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

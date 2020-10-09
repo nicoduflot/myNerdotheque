@@ -36,7 +36,20 @@ if(!$_COOKIE["accesAdmin20200727"]){
                         </button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <form method="post">
+                            <div class="form-group row">
+                                <label for="titre" class="col-lg-4">Titre :</label>
+                                <input type="text" class="form-control col-lg-8" name="titre" id="titre" value=""
+                                       placeholder="Renseignez le titre du média" required />
+                            </div>
+                            <div class="form-group row">
+                                <label for="resume" class="col-lg-4">Résumé :</label>
+                                <textarea class="form-control" name="resume" id="resume" placeholder="Résumé du média"></textarea>
+                            </div>
+                            <input type="hidden" name="idMedia" id="idMedia" value="" />
+                            <input type="hidden" name="idUtilisateur" id="idUtilisateur" value="" />
+
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
